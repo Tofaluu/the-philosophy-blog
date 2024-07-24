@@ -1,0 +1,38 @@
+.title {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 100px;
+    animation: fadeIn 1.5s;
+}
+
+.article-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1.2s forwards;
+}
+
+
+.section-title {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.posts {
+    font-size: 18px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: color 0.2s;
+}
+
+.posts:hover {
+    color: rgb(143, 143, 143);
+}

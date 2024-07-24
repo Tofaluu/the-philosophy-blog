@@ -1,0 +1,40 @@
+.back-button {
+    color: lightgrey;
+    font-size: 18px;
+    font-weight: bold; 
+    position: fixed;
+    left: 30px;
+    width: 100px;
+    animation: fadeIn 1s;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: rgb(143, 143, 143);
+}
+
+.post-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    max-width: 800px;
+    animation: fadeIn 1s;
+    margin-bottom: 30px;
+    transform: translateX(-40px);
+}
+
+.column-divider {
+    display: flex;
+    flex-direction: row;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.text-divider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+}
