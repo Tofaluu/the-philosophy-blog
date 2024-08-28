@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Blog Website</title>
-        <link href='https://fonts.googleapis.com/css?family=Julius Sans One' rel='stylesheet'>
-        <link rel="stylesheet" href="styles/general.css">
-        <link rel="stylesheet" href="styles/main-page.css">
-    </head>
-    <body>
-        <div class="fade-container">
-            <h1 class="title">
-                The Philosophy Blog
-            </h1>
-    
-            <div class="article-section">
-                <div class="section-title">Articles:</div>
-                <a href="post.html" target="_self" class="link">
-                    <div class="posts">Article 1</div>
-                </a>
-                <a href="" target="_self" class="link">
-                    <div class="posts">Blog 2</div>
-                </a>
-                <a href="" target="_self" class="link">
-                    <div class="posts">Essay 3</div>
-                </a>
-                <a href="" target="_self" class="link">
-                    <div class="posts">Writing</div>
-                </a>
-                <a href="" target="_self" class="link">
-                    <div class="posts">Ponderings</div>
-                </a> 
-            </div>
-        </div>
+  <head>
+    <title>Blog Website</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/main-page.css" />
+  </head>
+  <body>
+    <div class="fade-container">
+      <h1 class="title">The Philosophy Blog</h1>
 
-        <script>
-            document.querySelectorAll('.link').forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent the default link behavior
-                    const targetUrl = this.href; // Get the URL of the clicked link
-                    document.querySelector('.fade-container').classList.add('fade-out');
-                    setTimeout(function() {
-                        window.location.href = targetUrl;
-                    }, 500); // Delay the navigation by 500ms (same as the transition duration)
-                });
-            });
-        </script>
-    </body>
+      <div class="article-section">
+        <div class="section-title">Articles:</div>
+        <a href="post.html" target="_self" class="link">
+          <div class="posts">Francis Hutcheson - An analysis of beauty</div>
+        </a>
+        <!-- <a href="" target="_self" class="link">
+          <div class="posts">Blog 2</div>
+        </a>
+        <a href="" target="_self" class="link">
+          <div class="posts">Essay 3</div>
+        </a>
+        <a href="" target="_self" class="link">
+          <div class="posts">Writing</div>
+        </a>
+        <a href="" target="_self" class="link">
+          <div class="posts">Ponderings</div>
+        </a> -->
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+    </script>
+  </body>
 </html>
