@@ -134,6 +134,20 @@
           }, 500); // Delay the navigation by 500ms (same as the transition duration)
         });
       });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted) {
+          // Remove the fade-out class and add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.remove("fade-out");
+          fadeContainer.classList.add("fade-in");
+
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500);
+        }
+      });
     </script>
   </body>
 </html>
