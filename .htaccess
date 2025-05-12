@@ -1,7 +1,12 @@
 RewriteEngine On
- RewriteRule ^about/?$ /index.html [L]
- RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
- RewriteRule ^ /%1 [NE,L,R]
- # now we will internally map /file to/ file.html
- RewriteCond %{REQUEST_FILENAME}.html -f
- RewriteRule ^(.*)/?$ /$1.html  [L]
+
+# Redirect '/about' to 'index.html' (if desired, otherwise remove this rule)
+RewriteRule ^about/?$ /index.html [L]
+
+# Strip '.html' from URLs
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NE,L,R]
+
+# Rewrite requests to URLs without '.html' to internally point to '.html' files
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)/?$ /$1.html [L]
