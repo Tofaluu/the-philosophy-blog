@@ -1,12 +1,8 @@
-RewriteEngine On
-
-# Redirect '/about' to 'index.html' (if desired, otherwise remove this rule)
-RewriteRule ^about/?$ /index.html [L]
-
-# Strip '.html' from URLs
-RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NE,L,R]
-
-# Rewrite requests to URLs without '.html' to internally point to '.html' files
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)/?$ /$1.html [L]
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.html
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\[a-zA-Z0-9]{1,5}|/)$
+RewriteRule (.*)$ /$1/ [R=301,L]
