@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TITLE</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="C:\Users\Samoh\Downloads\the-philosophy-blog\styles\general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="C:\Users\Samoh\Downloads\the-philosophy-blog\styles\post-page.css"
+    />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a
+          href="C:\Users\Samoh\Downloads\the-philosophy-blog\index.html"
+          target="_self"
+          class="link"
+        >
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h2 class="post-title">TITLE</h2>
+          </div>
+
+          <div>POST TEXT</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>

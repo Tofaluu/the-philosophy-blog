@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Francis Hutcheson - An analysis of beauty</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="C:\Users\Samoh\Downloads\the-philosophy-blog\styles\general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="C:\Users\Samoh\Downloads\the-philosophy-blog\styles\post-page.css"
+    />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a
+          href="C:\Users\Samoh\Downloads\the-philosophy-blog\index.html"
+          target="_self"
+          class="link"
+        >
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h2 class="post-title">
+              Francis Hutcheson - An analysis of beauty
+            </h2>
+          </div>
+
+          <div>
+            <p>
+              &quot;In the judgment of beauty, there are some principles common
+              to all men, which, being derived <br />
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; from our nature, may be
+              called natural principles of taste.&quot;
+            </p>
+
+            <p>
+              In this quote from section two of his &quot;An Inquiry Concerning
+              Beauty, Order, Harmony,<br />
+              and Design,&quot; Hutcheson argues that there are natural
+              principles which are shared by all<br />
+              humans. And that certain principles of taste underlie our
+              judgments of beauty and provide a<br />
+              common ground upon which we can base our aesthetic judgments.
+            </p>
+
+            <p>
+              This idea is part of his larger exploration of the relationship
+              between beauty and our<br />
+              natural sense of harmony. He argues that harmony is a necessary
+              component of beauty, and<br />
+              that it is something that is pleasing to all humans. Going into
+              greater detail, he believes that<br />
+              beauty is a quality that is found in objects that exhibit
+              &quot;uniformity amidst variety.&quot; He suggests<br />
+              that objects that are too uniform are boring, while objects that
+              are too varied are chaotic. So<br />
+              instead, beauty is found in objects that strike a balance between
+              uniformity and variety.
+            </p>
+
+            <p>
+              This relates to his broader claims made in sections 1-4 of
+              &quot;An Inquiry Concerning Beauty,<br />
+              Order, Harmony, and Design.&quot; where he argues that this sense
+              of harmony is derived from our<br />
+              innate sense of moral goodness and allows us to distinguish
+              between good and evil. For<br />
+              Hutcheson, beauty, order, harmony, and design are all qualities
+              that can be perceived by<br />
+              humans through the moral sense. He believes that this sense allows
+              us to distinguish between<br />
+              beauty and deformity and to appreciate the former.
+            </p>
+
+            <p>
+              In terms of there being natural principles of taste that guide our
+              judgments of beauty.<br />
+              An argument can be made that there are certain universal aesthetic
+              principles that are shared<br />
+              by people from different cultures and backgrounds. For example,
+              most people tend to find<br />
+              landscapes with rolling hills and winding rivers to be beautiful,
+              and the color combination of<br />
+              blue and green is generally considered pleasing to the eye. This
+              suggests that there may be<br />
+              some innate factors that influence our aesthetic preferences.
+              However, aesthetic tastes can just<br />
+              as easily be shaped by cultural and societal factors. For
+              instance, the Japanese aesthetic of<br />
+              &quot;wabi-sabi&quot; values imperfection, simplicity, and
+              asymmetry, which might not be considered<br />
+              conventionally beautiful in other cultures. Another example is
+              abstract art, which often lacks a<br />
+              clear sense of harmony to be considered beautiful by
+              Hutcheson&rsquo;s definitions.
+            </p>
+
+            <p>
+              And in terms of being a compass for morality, there are probably
+              many works of art or<br />
+              architecture that are considered beautiful despite being
+              associated with things we might<br />
+              consider immoral. The Taj Mahal, for instance, is widely admired
+              for its beauty, but was said to<br />
+              be built as a symbol of Mughal imperialism and forced labor.
+            </p>
+
+            <p>
+              Our conception of beauty depends on so many factors. Everyone may
+              be born with an<br />
+              &quot;objective&quot; natural disposition, but things like
+              culture, and experiences may eventually shape<br />
+              you as much - if not more, than your nature. The memories you've
+              created, the sights you long
+            </p>
+
+            <p>
+              to one day see, imperfections in a work that reminds you of the
+              imperfections within yourself.<br />
+              Maybe at the end of the day, beauty can simply be described as the
+              unique needs of the soul.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>

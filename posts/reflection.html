@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shaftesbury – An Enquiry Concerning Virtue and Merit (Book 1)</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="C:\Users\Samoh\Downloads\the-philosophy-blog\styles\general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="C:\Users\Samoh\Downloads\the-philosophy-blog\styles\post-page.css"
+    />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a
+          href="C:\Users\Samoh\Downloads\the-philosophy-blog\index.html"
+          target="_self"
+          class="link"
+        >
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h2 class="post-title">
+              Shaftesbury – An Enquiry Concerning Virtue and Merit (Book 1)
+            </h2>
+          </div>
+
+          <div>
+            <p>
+              &quot;So we can’t say of any being that it is wholly and
+              absolutely bad unless we can show for certain that what we are
+              calling bad isn’t also good in some other system or in relation to
+              some other order or economy.&quot;
+            </p>
+
+            <p>
+              In the passage above located in Book 1 of &quot;An Inquiry
+              Concerning Virtue and Merit;&quot; Shaftesbury is suggesting that
+              moral judgments of good or bad cannot be made in isolation from
+              external factors. And that the context or system in which an
+              action or a being exists in must be taken into consideration.
+            </p>
+
+            <p>
+              The purpose of this quote is to highlight the importance of
+              perspective when evaluating an action or being as moral. For
+              example, consider a predator who kills its prey for survival.
+              While this act may seem ‘bad’ for the prey, it is necessary for
+              the predator&#39;s survival and therefore can be seen as
+              &quot;good&quot; in the larger system of the ecosystem. In such a
+              case, what is ‘good&#39; in one context may not be so in another.
+              Shaftesbury argues that the only way to label a being as “wholly
+              and absolutely bad” requires an understanding of its role within
+              every system that it affects, and a demonstration that its actions
+              are not &#39;good&#39; in any context.
+            </p>
+
+            <p>
+              Shaftesbury&#39;s presents these ideas as the foundation to
+              support his overarching argument in &quot;An Inquiry Concerning
+              Virtue and Merit.&quot; In this work, he posits that virtue and
+              moral behavior are essential to the well-being of society and the
+              individual. Every individual being possesses a natural “good” or
+              desire; and acting purely in the pursuit of those individual
+              desires is what he calls selfishness. Virtue, however, is acting
+              beyond our self-interest in service of the larger society (or
+              system) with which we belong. For Shaftesbury, it is only through
+              the cultivation of virtue and moral behavior that individuals can
+              achieve true happiness and fulfillment.
+            </p>
+
+            <p>
+              I found Shaftesbury&#39;s quote particularly relevant especially
+              in relation to some of our recent discussions regarding the
+              truckers and mask/vaccine mandates. The quote helps explain the
+              conflicts that arise when different people and citizens all act in
+              service of their self-interest or the interests of the specific
+              systems they are concerned with. For instance, the purpose of the
+              government is to make decisions in service of the whole of the
+              country (of course this is not always the case). Something like a
+              vaccine mandate provides an overall good towards the “system” of
+              Canada. However, it can also have a negative impact on other
+              private systems - such as the community of truckers - who are
+              concerned with their individual rights or the safety of their
+              loved ones. It is from this perspective that neither groups can be
+              said to be “wholly” good or bad.
+            </p>
+
+            <p>
+              In conclusion, Shaftesbury&#39;s quote highlights the importance
+              of understanding different systems and economies in making moral
+              assessments. It is a reminder that what may be considered bad in
+              one context may be seen as good in another. In the contemporary
+              context, this quote serves as a call for individuals to consider
+              the broader context in which actions take place before making
+              moral judgments. This is particularly relevant in today&#39;s
+              political climate, where the interests of different socio-economic
+              classes often come into conflict.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>
