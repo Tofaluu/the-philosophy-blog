@@ -14,8 +14,8 @@ h1,
 h2,
 h3 {
   text-align: center;
-  transform: translateX(-40px);
   animation: fadeIn 1s;
+  transform: translateX(-40px);
 }
 
 html {
