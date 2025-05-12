@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      The Main Difference between Human and Natural Sciences According to
+      Wilhelm Dilthey
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/post-page.css" />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a href="../index.html" target="_self" class="link">
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h2 class="post-title">
+              The Main Difference between Human and Natural Sciences According
+              to Wilhelm Dilthey
+            </h2>
+          </div>
+
+          <div>
+            <p>
+              Wilhelm Dilthey was a famous German philosopher who made the most
+              renowned distinction between human sciences
+              (<em>Geisteswissenschaften</em>) and natural sciences
+              (<em>Naturwissenschaften</em>). Most of his work involves the
+              distinction in terms of the goal, method, and the like in these
+              two fields from epistemological and methodological points of view.
+              This essay critically explores Dilthey's distinction between human
+              and natural sciences as it appears in his philosophical writings.
+            </p>
+
+            <p>
+              First, the most apparent divergence is in what these sciences aim
+              to accomplish. According to Dilthey, natural sciences explain
+              phenomena through 'causality' and 'general laws.' They aim to
+              reveal objective facts about the external world by employing
+              rigorous observation methods, measurement, and prediction of a
+              natural occurrence (Dilthey,
+              <em>The Formation of the Historical World</em> 104). On the other
+              hand, the human sciences attempt to comprehend human experiences
+              in a subjective and context-based manner. Dilthey suggests that
+              human sciences deduce meanings from historical, cultural, and
+              social phenomena. This includes empathetically accessing the lived
+              experience of persons and communities, which he refers to as
+              <strong>Verstehen</strong> (understanding). Whereas natural
+              sciences offer universalization in their universalizing
+              tendencies, human sciences place their emphasis on particularity
+              and individuality as a result of human existence's diversity.
+            </p>
+
+            <p>
+              Also significantly different is methodology. Natural science does
+              not rest on metaphysical assumptions; it depends on empirical
+              observation, experimentation, and quantification to yield
+              objective and reproducible results. Striving mainly to establish
+              causality and formulation of the laws of natural phenomena
+              (Dilthey, <em>The Formation of the Historical World</em> 104-107).
+              However, the human sciences are primarily founded upon
+              hermeneutics, or the art of interpretation. According to Dilthey,
+              <em>The Formation of the Historical World</em>, empirical methods
+              cannot exhaust human experiences because they are historically,
+              culturally, and socially determined (106). In this sense,
+              hermeneutics translates texts, symbols, and actions, understanding
+              that insider meanings are constructed depending on the
+              presumptions of internal meaning and that these presumptions are
+              determined by those producing the meaning. As a result, the human
+              sciences are necessarily interpretive, not explanatory.
+            </p>
+
+            <p>
+              Additionally, subjectivity becomes central, argues Dilthey, in the
+              human sciences. Subjectivity is removed in the natural sciences to
+              ensure objectivity and reproducibility. Subjectivity is not a
+              limitation in the human sciences but rather is the very thing that
+              needs to be understood. According to Dilthey,
+              <em>The Formation of the Historical World</em>, only if we concede
+              the subjective viewpoints of individuals and their historical
+              situation will we be able to understand human experiences (102).
+              Natural sciences aim for universal truths that stand above
+              personal points of view; human sciences embrace the variability
+              and relativity of human beings. But for Dilthey, this does not
+              reduce the validity of human sciences; it characterizes their
+              subject matter's richness and intricate character.
+            </p>
+
+            <p>
+              Further, central to Dilthey’s philosophy is the contextual
+              dependency of the human sciences. Dilthey,
+              <em>The Formation of the Historical World</em> claims that the
+              actions and expressions of a man are temporal and historical
+              (102-107). Thus, they are dynamic and develop, unlike the natural
+              sciences, which are, after time, independent truths and laws that
+              remain the same forever. The human sciences, therefore, demand
+              consciousness of history's continuity and change. Situating a
+              historical text within its specific cultural and temporal context
+              is essential to comprehend that text, but it is alien to the
+              methodologies of the natural sciences.
+            </p>
+
+            <p>
+              Hence, Dilthey maintains that the difference between the human and
+              natural sciences is found in their objectives, methods, and
+              epistemological assumptions. Whereas natural sciences attempt to
+              explain natural phenomena by authority of empirical observation
+              and [by authority of] causality, the human sciences seek to
+              explain human experiences by interpretation and empathy. This
+              distinction identifies the particular contribution of each field
+              to our understanding of reality and their variety of approaches to
+              knowledge and knowledge validation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>

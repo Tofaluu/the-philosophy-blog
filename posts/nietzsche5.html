@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nietzsche Works Cited</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/post-page.css" />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a href="../index.html" target="_self" class="link">
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h2 class="post-title">Works Cited</h2>
+          </div>
+
+          <div>
+            <p>
+              Dilthey, Wilhelm. <em>The Essence of Philosophy</em>. Translated
+              by John A. Krois and Rudolf A. T. Makkreel, 1954.
+            </p>
+            <p>
+              Dilthey, Wilhelm.
+              <em
+                >The Formation of the Historical World in the Human Sciences</em
+              >. Edited by Rudolf A. Makkreel and Frithjof Rodi, Princeton
+              University Press, 2002.
+            </p>
+            <p>
+              Dilthey, Wilhelm. <em>Poetry and Experience (Vol. 5)</em>. Edited
+              by Rudolf A. Makkreel and Frithjof Rodi, Princeton University
+              Press, 1985.
+            </p>
+            <p>
+              Janaway, Christopher.
+              <em>Beyond Selflessness: Reading Nietzsche’s Genealogy</em>.
+              Oxford University Press, 2009.
+            </p>
+            <p>
+              Nietzsche, Friedrich. <em>On the Genealogy of Morality</em>.
+              Edited by Keith Ansell-Pearson, Translated by Carol Diethe,
+              Cambridge University Press, 1994.
+            </p>
+            <p>
+              Nietzsche, Friedrich.
+              <em
+                >Nietzsche: Beyond Good and Evil: Prelude to a Philosophy of the
+                Future</em
+              >. Edited by Rolf-Peter Horstmann and Judith Norman, Cambridge UP,
+              2001.
+            </p>
+            <p>
+              Owensby, Jacob. "Dilthey and the Historicity of Poetic
+              Expression."
+              <em>The Journal of Aesthetics and Art Criticism</em> 46.4 (1988):
+              501-507.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Task of the Philosopher</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/post-page.css" />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a href="../index.html" target="_self" class="link">
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h3 class="post-title">The Task of the Philosopher</h3>
+          </div>
+
+          <div>
+            <p>
+              A radical departure from the traditional imagery of the
+              philosopher as merely a critic or sceptic, Friedrich Nietzsche
+              suggests the philosopher as the creator of values. According to
+              Nietzsche, the philosopher's work is not to believe the current
+              truths but to give law to new values to direct humanity's future.
+              This essay critically analyses this claim, using one argument to
+              support and one to oppose Nietzsche's proposition.
+            </p>
+
+            <h3>Argument For: The Philosopher as a Creator of Values</h3>
+            <p>
+              Nietzsche's interpretation of the philosopher's role defines the
+              philosopher as a creator of values, thus situating philosophy as
+              an active and transforming force. For Nietzsche, true philosophers
+              are "commanders and legislators” not bound by the dogma of
+              inherited truths but tasked with creating new paradigms of
+              understanding (Nietzsche, <em>Beyond Good and Evil</em> 106). In
+              this view, philosophy is not, as there has long been a tendency to
+              believe, a purely derivative or reflective discipline.
+              Philosophers are imagined as great builders of cultural and
+              existential meaning, great wielders of what Nietzsche meant by the
+              will to power. With the idea of the philosopher's creative agency,
+              Nietzsche insists on innovation as a remedy against evolving
+              societal and existential challenges. In such a context,
+              Nietzsche's model makes the philosopher a necessary progress and
+              reform agent. It is also a direct connection of philosophy to life
+              and, thus, a practice of vitality and dynamism rather than
+              cogitation.
+            </p>
+
+            <p>
+              What makes this argument strong is an acknowledgment of the
+              transformative power of philosophy. Placing philosophers as
+              creators who bridge thought with action and keeps philosophy
+              related to humanity as long as the philosophers continue to
+              create. It is also opposed to the reductive pragmatism of
+              positivism, which typically demotes philosophy (logically) lower
+              than the empirical sciences. Instead, Nietzsche drills philosophy
+              back into the significance of living a life with meaning.
+            </p>
+
+            <h3>Argument Against: The Risk of Authoritarianism</h3>
+            <p>
+              Although Nietzsche’s vision is inspirational, his
+              characteristically grandiose approach to an elite intelligence of
+              great poets and artists who would make civilization anew is as
+              vulnerable to the criticism that it would lead to authoritarianism
+              as is the familiar socialist commonwealth of noble minds.
+              Nietzsche endangers the philosopher's burden of authority by
+              elevating him to the position of legislative power. This leads to
+              an issue about subjectivity and fallibility within human nature.
+              Nietzsche himself acknowledges that philosophical doctrines often
+              stem from personal prejudices, whims, or "fervent wish[es]" masked
+              as truths (Nietzsche, <em>Beyond Good and Evil</em> 8). The
+              problem arises when philosophers are granted the power to impose
+              arbitrary or harmfully rigid systems in the name of innovation.
+            </p>
+
+            <p>
+              Furthermore, this approach cuts against philosophy's collaborative
+              and communal nature. Wilhelm Dilthey’s critique offers a
+              counterpoint, emphasizing that philosophy gains legitimacy through
+              its capacity to unify diverse worldviews and to ground itself in a
+              "universally valid worldview" (Dilthey,
+              <em>The Essence of Philosophy</em> 239). While Nietzsche’s model
+              might leave us isolated from one another, and only connected
+              through self as the fundamental reality, Dilthey finds philosophy
+              within the continued human communal enterprise of leading
+              meaningful lives with a communal dream to make things better. By
+              taking this collaborative approach to exploring philosophical
+              insights and sharing the validation for their existence, this
+              framework reduces the risk of ideological extremism replacing
+              philosophical insights.
+            </p>
+
+            <h3>Conclusion</h3>
+            <p>
+              An inspiring vision of what philosophy might be able to do,
+              Nietzsche presents his definition of the philosopher's task —
+              creator of values. This leads to the transformative nature of
+              philosophy and the fact that it can help us break into uncharted
+              territories. The model, though, is not without risk. Nietzsche’s
+              framework, wherein individual will is over communal dialogue, can
+              prove to be used to abuse power. It is possible that both tasks of
+              the philosopher are necessary, and priority shifts depending on
+              the conditions of the philosophers. Being patrons of communal
+              ideals when conditions allow and a creator of values when a rapid
+              transformation is necessary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>

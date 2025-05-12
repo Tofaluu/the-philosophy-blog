@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kant - Seventh Thesis</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius Sans One"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/post-page.css" />
+  </head>
+  <body>
+    <div class="fade-container">
+      <div class="column-divider">
+        <a href="../index.html" target="_self" class="link">
+          <div class="back-button">Back</div>
+        </a>
+
+        <div class="text-divider">
+          <div>
+            <h2 class="post-title">Kant - Seventh Thesis</h2>
+          </div>
+
+          <div>
+            <p>
+              In the seventh thesis of his essay
+              <em>“Universal History from a Cosmopolitan Point of View”</em>,
+              Kant argues it is inevitable that the different fractured nations
+              of the world will eventually unite into a “league of nations”. I
+              won’t go too into detail regarding his arguments, but in short,
+              his reasoning is that, just as each individual human benefits from
+              entering into a society to ensure collective safety, the same
+              logic holds when applied at scale. So if we consider each nation
+              as an individual person, it is for each nation’s collective
+              benefit to act co-operatively rather than against each other.
+            </p>
+
+            <p>
+              However, he elaborates on this and says that the
+              natural/instinctive way humanity arrives at such contracts of
+              peace has always been out of necessity rather than reason –
+              despite the fact that reason alone should theoretically be enough
+              to bring the world to peace. In other words, humans have a habit
+              of doing everything the hard way and are unwilling to make the
+              necessary changes until forced to through pain and conflict.
+            </p>
+
+            <p>
+              Although Kant was referring to global peace, I felt this analysis
+              of humanity’s nature at approaching problems could just as easily
+              be applied to the issue of climate change. Despite reason and
+              science telling us far in advance the very real and inevitable
+              consequences of climate change, humans seem to have a super-power
+              for ignoring long-term problems in favor of protecting a more
+              comfortable world view.
+            </p>
+
+            <p>
+              His solution for this is “long internal working of each political
+              body toward the education of its citizens” – specifically an
+              education towards a stronger moral disposition. I do believe the
+              current generation of young minds are at a point where they are
+              becoming more and more concerned with the issues plaguing us with
+              climate change. Yet, it still seems to be out of necessity of the
+              imminent threat rather than as a result of reason and higher
+              education.
+            </p>
+
+            <p>
+              In a way, I have no doubt that every generation has had their fair
+              share of imminent threats that forced change (except maybe those
+              hippies in the 60s and 70s). But it seems to me that, to truly act
+              in a way that minimizes collective human suffering – each
+              generation would have to not only work to solve the problems of
+              their time; but also selflessly, out of moral obligation, work to
+              predict and prevent the problems of subsequent generations as
+              well.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          const targetUrl = this.href; // Get the URL of the clicked link
+          document.querySelector(".fade-container").classList.add("fade-out");
+          setTimeout(function () {
+            window.location.href = targetUrl;
+          }, 500); // Delay the navigation by 500ms (same as the transition duration)
+        });
+      });
+
+      window.addEventListener("pageshow", function (event) {
+        const fadeContainer = document.querySelector(".fade-container");
+
+        if (event.persisted || event.type === "pageshow") {
+          // Force a reflow to reset the animation
+          fadeContainer.classList.remove("fade-in", "fade-out");
+          void fadeContainer.offsetWidth; // Trigger reflow
+
+          // Add the fade-in class to trigger the fade-in effect
+          fadeContainer.classList.add("fade-in");
+
+          // Optionally, remove the fade-in class after the animation is done
+          setTimeout(function () {
+            fadeContainer.classList.remove("fade-in");
+          }, 500); // 500ms should match your fade-in duration
+        }
+      });
+    </script>
+  </body>
+</html>
